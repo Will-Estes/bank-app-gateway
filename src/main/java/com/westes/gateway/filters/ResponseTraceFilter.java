@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpHeaders;
 import reactor.core.publisher.Mono;
 
-@Configuration
+//@Configuration
 public class ResponseTraceFilter {
 
   private static final Logger logger = LoggerFactory.getLogger(ResponseTraceFilter.class);

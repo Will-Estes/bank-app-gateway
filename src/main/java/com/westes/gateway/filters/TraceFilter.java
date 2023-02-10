@@ -24,15 +24,7 @@ public class TraceFilter implements GlobalFilter {
 
   @Override
   public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-    HttpHeaders requestHeaders = exchange.getRequest().getHeaders();
-    if (isCorrelationIdPresent(requestHeaders)) {
-      logger.debug("westes-correlation-id found in tracing filter: {}. ",
-          filterUtility.getCorrelationId(requestHeaders));
-    } else {
-      String correlationID = generateCorrelationId();
-      exchange = filterUtility.setCorrelationId(exchange, correlationID);
-      logger.debug("westes-correlation-id generated in tracing filter: {}.", correlationID);
-    }
+    logger.info("Trace Filter invoked");
     return chain.filter(exchange);
   }
 
