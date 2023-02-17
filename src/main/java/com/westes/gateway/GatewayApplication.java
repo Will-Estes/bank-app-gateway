@@ -27,18 +27,18 @@ public class GatewayApplication {
   public RouteLocator myRoutes(RouteLocatorBuilder builder) {
     return builder.routes()
         .route(p -> p
-            .path("/westes/accounts-service/**")
-            .filters(f -> f.rewritePath("/westes/accounts-service/(?<segment>.*)", "/${segment}")
+            .path("/willestes82892/accounts-service/**")
+            .filters(f -> f.rewritePath("/willestes82892/accounts-service/(?<segment>.*)", "/${segment}")
                 .addResponseHeader("X-Response-Time", new Date().toString()))
             .uri("lb://ACCOUNTS-SERVICE")).
         route(p -> p
-            .path("/westes/loans-service/**")
-            .filters(f -> f.rewritePath("/westes/loans-service/(?<segment>.*)", "/${segment}")
+            .path("/willestes82892/loans-service/**")
+            .filters(f -> f.rewritePath("/willestes82892/loans-service/(?<segment>.*)", "/${segment}")
                 .addResponseHeader("X-Response-Time", new Date().toString()))
             .uri("lb://LOANS-SERVICE")).
         route(p -> p
-            .path("/westes/cards-service/**")
-            .filters(f -> f.rewritePath("/westes/cards-service/(?<segment>.*)", "/${segment}")
+            .path("/willestes82892/cards-service/**")
+            .filters(f -> f.rewritePath("/willestes82892/cards-service/(?<segment>.*)", "/${segment}")
                 .addResponseHeader("X-Response-Time", new Date().toString()))
             .uri("lb://CARDS-SERVICE")).build();
   }
